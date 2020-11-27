@@ -4,6 +4,7 @@ import 'package:pets/bloc/favorit_bloc.dart';
 import 'package:pets/ui/category_pet.dart';
 import 'package:pets/bloc/category_bloc.dart';
 import 'content_pet.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -34,27 +35,30 @@ class _MainScreenState extends State<MainScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                    padding: EdgeInsets.only(left: 6),
+                    padding: EdgeInsets.only(),
                     icon: Container(
-                      child: Image(
-                        image: AssetImage('assets/images/ion_menu.png'),
-                      ),
+                      height: 28,
+                      width: 28,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage('assets/ion_menu.png'))),
                     ),
                     onPressed: () {}),
                 Container(
                   child: Row(
                     children: <Widget>[
                       Image.asset(
-                        'assets/images/pet-carrier 1.png',
-                        width: 20,
-                        height: 20,
+                        'assets/pet-carrier 1.png',
+                        width: 16,
+                        height: 16,
                       ),
                       SizedBox(
                         width: 4,
                       ),
                       Text(
                         'AdoptMe',
-                        style: TextStyle(fontFamily: 'Sarabun', fontSize: 16),
+                        style: GoogleFonts.sarabun(
+                            fontSize: 16, fontWeight: FontWeight.w400),
                       ),
                     ],
                   ),
@@ -62,14 +66,14 @@ class _MainScreenState extends State<MainScreen> {
                 Padding(
                   padding: const EdgeInsets.only(top: 8),
                   child: Container(
-                    width: 45,
-                    height: 45,
+                    width: 38,
+                    height: 38,
                     padding: EdgeInsets.all(30),
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
                             fit: BoxFit.fill,
-                            image: AssetImage('assets/images/niki.jpg'))),
+                            image: AssetImage('assets/niki.jpg'))),
                   ),
                 ),
               ],
@@ -83,78 +87,74 @@ class _MainScreenState extends State<MainScreen> {
                 child: Container(
                   margin: EdgeInsets.only(top: 20),
                   child: Column(children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(left: 16, bottom: 24),
-                      child: Column(
-                        children: <Widget>[
-                          Row(
-                            children: <Widget>[
-                              Text(
-                                'Hello,',
-                                textAlign: TextAlign.start,
-                                style: TextStyle(
-                                    fontFamily: 'Sarabun',
-                                    color: Color(0xffdddddd),
-                                    fontSize: 20),
-                              ),
-                            ],
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(left: 30),
+                          child: Text(
+                            'Hello,',
+                            textAlign: TextAlign.start,
+                            style: GoogleFonts.sarabun(
+                                color: Color(0xffdddddd), fontSize: 16),
                           ),
-                          Row(
-                            children: <Widget>[
-                              Text(
-                                'Wendy Watson',
-                                textAlign: TextAlign.start,
-                                style: TextStyle(
-                                    fontFamily: 'Playfair',
-                                    fontWeight: FontWeight.w700,
-                                    color: Color(0xffffffff),
-                                    fontSize: 40),
-                              ),
-                            ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 30),
+                          child: Text(
+                            'Wendy Watson',
+                            textAlign: TextAlign.start,
+                            style: GoogleFonts.playfairDisplay(
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xffffffff),
+                                fontSize: 32),
                           ),
-                          Row(
-                            children: <Widget>[
-                              Padding(
-                                padding: const EdgeInsets.only(top: 20),
-                                child: Text(
-                                  'Location,',
-                                  textAlign: TextAlign.start,
-                                  style: TextStyle(
-                                      fontFamily: 'Sarabun',
-                                      color: Color(0xffdddddd),
-                                      fontSize: 15),
-                                ),
+                        ),
+                        Row(
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.only(top: 20, left: 30),
+                              child: Text(
+                                'Location,',
+                                style: GoogleFonts.sarabun(
+                                    color: Color(0xffdddddd), fontSize: 15),
                               ),
-                            ],
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(right: 20),
-                            child: TextField(
-                              enabled: false,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'Sarabun',
-                                  fontSize: 40,
-                                  fontWeight: FontWeight.w700),
-                              decoration: InputDecoration(
-                                  disabledBorder: UnderlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.white38)),
-                                  focusedBorder: UnderlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.amber)),
-                                  prefixIcon: Icon(
-                                    Icons.location_on,
-                                    color: Color(0xff94DD8B),
-                                    size: 35,
-                                  ),
-                                  fillColor: Colors.white10),
-                              controller: controller,
                             ),
+                          ],
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(right: 20, left: 30),
+                          child: TextField(
+                            enabled: false,
+                            style: GoogleFonts.sarabun(
+                                color: Colors.white,
+                                fontSize: 32,
+                                fontWeight: FontWeight.w700),
+                            decoration: InputDecoration(
+                                disabledBorder: UnderlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: Colors.white38)),
+                                focusedBorder: UnderlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: Colors.amber)),
+                                prefixIcon: Icon(
+                                  Icons.location_on,
+                                  color: Color(0xff94DD8B),
+                                  size: 35,
+                                ),
+                                fillColor: Colors.white10),
+                            controller: controller,
                           ),
-                          CategoryPet(),
-                        ],
-                      ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 30),
+                          child: CategoryPet(),
+                        ),
+                        SizedBox(
+                          height: 24,
+                        )
+                      ],
                     ),
                     Container(
                         child: Column(
@@ -170,21 +170,18 @@ class _MainScreenState extends State<MainScreen> {
                                 children: <Widget>[
                                   Text(
                                     '32 Result',
-                                    style: TextStyle(
-                                      fontFamily: 'Sarabun',
+                                    style: GoogleFonts.sarabun(
                                       color: Color(0xffC6C6C6),
                                       fontWeight: FontWeight.w700,
-                                      fontSize: 30,
+                                      fontSize: 24,
                                     ),
                                   ),
                                   Text(
                                     'See All',
-                                    style: TextStyle(
-                                      fontFamily: 'Sarabun',
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.w700,
-                                      color: Color(0xff038175),
-                                    ),
+                                    style: GoogleFonts.sarabun(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w700,
+                                        color: Color(0xff038175)),
                                   ),
                                 ],
                               ),

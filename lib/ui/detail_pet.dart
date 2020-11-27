@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pets/model/model_Category.dart';
+import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:get/get.dart';
+import 'package:pets/ui/animation_cat.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DetailPet extends StatelessWidget {
   @override
@@ -28,26 +32,24 @@ class DetailPet extends StatelessWidget {
                 Stack(
                   children: [
                     Container(
+                        width: MediaQuery.of(context).size.width - 32,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Container(
                               margin: EdgeInsets.only(
                                   top: 10, bottom: 10, left: 20, right: 20),
-                              width: double.infinity,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(35),
                                 child: Image.asset(
-                                  'assets/images/kucing-munchkin.png',
+                                  'assets/kucing-munchkin.png',
                                   height: 300,
-                                  fit: BoxFit.fitWidth,
+                                  fit: BoxFit.cover,
                                 ),
                               ),
                             ),
                           ],
                         ),
-                        height: 330,
-                        width: 400,
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(35))),
@@ -58,17 +60,13 @@ class DetailPet extends StatelessWidget {
                           children: <Widget>[
                             Text(
                               'Hi, my name is',
-                              style: TextStyle(
-                                  fontFamily: 'Sarabun',
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 20),
+                              style: GoogleFonts.sarabun(
+                                  fontWeight: FontWeight.w300, fontSize: 18),
                             ),
                             Text(
                               'Snowpy',
-                              style: TextStyle(
-                                  fontFamily: 'Playfair',
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 40),
+                              style: GoogleFonts.playfairDisplay(
+                                  fontWeight: FontWeight.w700, fontSize: 36),
                             ),
                           ],
                         ))
@@ -89,19 +87,17 @@ class DetailPet extends StatelessWidget {
                               children: <Widget>[
                                 Text(
                                   'Age',
-                                  style: TextStyle(
-                                      fontFamily: 'Sarabun',
+                                  style: GoogleFonts.sarabun(
                                       fontWeight: FontWeight.w400,
                                       color: Colors.white54,
-                                      fontSize: 16),
+                                      fontSize: 12),
                                   textAlign: TextAlign.left,
                                 ),
                                 Text('1 Year',
-                                    style: TextStyle(
-                                        fontFamily: 'Sarabun',
+                                    style: GoogleFonts.sarabun(
                                         fontWeight: FontWeight.w400,
                                         color: Colors.white,
-                                        fontSize: 19))
+                                        fontSize: 14))
                               ],
                             ),
                           ),
@@ -112,19 +108,17 @@ class DetailPet extends StatelessWidget {
                               children: <Widget>[
                                 Text(
                                   'Gender',
-                                  style: TextStyle(
-                                      fontFamily: 'Sarabun',
+                                  style: GoogleFonts.sarabun(
                                       fontWeight: FontWeight.w400,
                                       color: Colors.white54,
-                                      fontSize: 16),
+                                      fontSize: 12),
                                   textAlign: TextAlign.left,
                                 ),
                                 Text('Female',
-                                    style: TextStyle(
-                                        fontFamily: 'Sarabun',
+                                    style: GoogleFonts.sarabun(
                                         fontWeight: FontWeight.w400,
                                         color: Colors.white,
-                                        fontSize: 19))
+                                        fontSize: 14))
                               ],
                             ),
                           ),
@@ -135,19 +129,17 @@ class DetailPet extends StatelessWidget {
                               children: <Widget>[
                                 Text(
                                   'Breed',
-                                  style: TextStyle(
-                                      fontFamily: 'Sarabun',
+                                  style: GoogleFonts.sarabun(
                                       fontWeight: FontWeight.w400,
                                       color: Colors.white54,
-                                      fontSize: 16),
+                                      fontSize: 12),
                                   textAlign: TextAlign.left,
                                 ),
                                 Text('Munchkin',
-                                    style: TextStyle(
-                                        fontFamily: 'Sarabun',
+                                    style: GoogleFonts.sarabun(
                                         fontWeight: FontWeight.w400,
                                         color: Colors.white,
-                                        fontSize: 19))
+                                        fontSize: 14))
                               ],
                             ),
                           ),
@@ -158,19 +150,17 @@ class DetailPet extends StatelessWidget {
                               children: <Widget>[
                                 Text(
                                   'Color',
-                                  style: TextStyle(
-                                      fontFamily: 'Sarabun',
+                                  style: GoogleFonts.sarabun(
                                       fontWeight: FontWeight.w400,
                                       color: Colors.white54,
-                                      fontSize: 16),
+                                      fontSize: 12),
                                   textAlign: TextAlign.left,
                                 ),
                                 Text('White',
-                                    style: TextStyle(
-                                        fontFamily: 'Sarabun',
+                                    style: GoogleFonts.sarabun(
                                         fontWeight: FontWeight.w400,
                                         color: Colors.white,
-                                        fontSize: 19))
+                                        fontSize: 14))
                               ],
                             ),
                           )
@@ -178,22 +168,23 @@ class DetailPet extends StatelessWidget {
                       ),
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
                         Padding(
-                          padding: const EdgeInsets.only(right: 20),
+                          padding: const EdgeInsets.only(right: 30),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Icon(
                                 Icons.favorite_border,
                                 color: Colors.white,
+                                size: 13,
                               ),
                               Text('12',
-                                  style: TextStyle(
-                                      fontFamily: 'Sarabun',
+                                  style: GoogleFonts.sarabun(
                                       fontWeight: FontWeight.w400,
                                       color: Colors.white,
-                                      fontSize: 19))
+                                      fontSize: 12))
                             ],
                           ),
                         ),
@@ -209,11 +200,10 @@ class DetailPet extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(left: 20, top: 5),
                           child: Text('About',
-                              style: TextStyle(
-                                  fontFamily: 'Sarabun',
+                              style: GoogleFonts.sarabun(
                                   fontWeight: FontWeight.w500,
                                   color: Colors.white,
-                                  fontSize: 25)),
+                                  fontSize: 20)),
                         ),
                       ],
                     ),
@@ -227,7 +217,7 @@ class DetailPet extends StatelessWidget {
                             'Snowpy is munchkin cat. She’s known for being quiet and sweet. Althought Snowpy tend to be relaxed and easygoing, She runs very fast and can climb trees easily, She is very smart because she never forgets whatever I teach her. ',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 16,
+                              fontSize: 12,
                             ),
                           ),
                         ),
@@ -254,12 +244,12 @@ class DetailPet extends StatelessWidget {
                                     Icon(
                                       Icons.close,
                                       color: Color(0xff02514A),
-                                      size: 30,
+                                      size: 20,
                                     ),
                                     Text(
                                       'CANCEL',
                                       style: TextStyle(
-                                          fontSize: 20,
+                                          fontSize: 16,
                                           color: Color(0xff02514A)),
                                     )
                                   ],
@@ -275,7 +265,20 @@ class DetailPet extends StatelessWidget {
                                 color: Color(0xffFFE3B3),
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(30)),
-                                onPressed: () {},
+                                onPressed: () {
+                                  AwesomeDialog(
+                                    context: context,
+                                    animType: AnimType.SCALE,
+                                    dialogType: DialogType.INFO,
+                                    title: 'Are you sure ?',
+                                    desc:
+                                        'Will you be a good servant to this good girl ?',
+                                    btnCancelOnPress: () {},
+                                    btnOkOnPress: () {
+                                      Get.to(AnimationCat());
+                                    },
+                                  )..show();
+                                },
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -283,12 +286,12 @@ class DetailPet extends StatelessWidget {
                                     Icon(
                                       Icons.favorite,
                                       color: Color(0xff02514A),
-                                      size: 30,
+                                      size: 20,
                                     ),
                                     Text(
-                                      'I WANT TO ADOPT',
+                                      ' I WANT TO ADOPT',
                                       style: TextStyle(
-                                          fontSize: 20,
+                                          fontSize: 16,
                                           color: Color(0xff02514A)),
                                     )
                                   ],
@@ -316,20 +319,21 @@ class AnotherImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 155,
+      height: 86,
       child: ListView.builder(
         padding: EdgeInsets.symmetric(horizontal: 30.0),
         scrollDirection: Axis.horizontal,
         itemCount: images.length,
         itemBuilder: (BuildContext context, int index) {
           return Container(
-            width: 130,
+            width: 86,
+            height: 86,
             margin: EdgeInsets.only(right: 15, top: 15),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(8),
               child: Image(
                 image: AssetImage(images[index]),
-                fit: BoxFit.fitHeight,
+                fit: BoxFit.cover,
               ),
             ),
           );

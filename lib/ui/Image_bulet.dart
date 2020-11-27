@@ -11,8 +11,8 @@ class ImageBulet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
-      width: 150,
+      height: height,
+      width: 100,
       child: Stack(
         children: <Widget>[
           Positioned(
@@ -23,6 +23,7 @@ class ImageBulet extends StatelessWidget {
               child: Icon(
                 Icons.more_horiz,
                 color: Colors.white,
+                size: 20,
               ),
               decoration: BoxDecoration(
                 color: Colors.black45,
@@ -31,31 +32,29 @@ class ImageBulet extends StatelessWidget {
             ),
           ),
           Positioned(
-            right: 25,
+            right: 10,
             child: Container(
               width: width,
               height: height,
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetImage('assets/images/brian.jpg'))),
+                      fit: BoxFit.fill, image: AssetImage('assets/brian.jpg'))),
             ),
           ),
           Positioned(
-            right: 45,
+            right: 20,
             child: Container(
               width: width,
               height: height,
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetImage('assets/images/artur.jpg'))),
+                      fit: BoxFit.fill, image: AssetImage('assets/artur.jpg'))),
             ),
           ),
           Positioned(
-            right: 65,
+            right: 30,
             child: Container(
               width: width,
               height: height,
@@ -63,7 +62,7 @@ class ImageBulet extends StatelessWidget {
                   shape: BoxShape.circle,
                   image: DecorationImage(
                       fit: BoxFit.fill,
-                      image: AssetImage('assets/images/kesbor.jpg'))),
+                      image: AssetImage('assets/kesbor.jpg'))),
             ),
           ),
         ],
